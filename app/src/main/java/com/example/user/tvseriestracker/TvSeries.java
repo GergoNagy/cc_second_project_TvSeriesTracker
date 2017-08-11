@@ -15,11 +15,11 @@ public class TvSeries {
     private String poster;
     private String imdbrating;
     private String type;
-    private Integer total;
+    private int total;
 
     public TvSeries(String title, String released, String runtime, String genre,
                     String plot, String country, String poster, String imdbrating,
-                    String type, Integer total){
+                    String type, int total){
 
         this.title = title;
         this.released = released;
@@ -70,7 +70,7 @@ public class TvSeries {
         return type;
     }
 
-    public Integer getTotal() {
+    public int getTotal() {
         return total;
     }
 }
