@@ -1,11 +1,16 @@
 package com.example.user.tvseriestracker;
 
 import android.content.Context;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -17,7 +22,10 @@ public class SeriesAdatper extends ArrayAdapter<TvSeries> {
 
     public SeriesAdatper(Context context, ArrayList<TvSeries> series){
         super(context, 0, series);
+
     }
+
+
 
     @Override
     public View getView(int position, View listItemView, ViewGroup parent){
@@ -29,8 +37,11 @@ public class SeriesAdatper extends ArrayAdapter<TvSeries> {
 
         TvSeries currentSeries = getItem(position);
 
-        TextView ranking = (TextView) listItemView.findViewById(R.id.picture);
-        ranking.setText(currentSeries.getPoster());
+//        TextView ranking = (TextView) listItemView.findViewById(R.id.picture);
+//        ranking.setText(currentSeries.getPoster());
+
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.imageView);
+        Picasso.with(getContext()).load(currentSeries.getPoster()).into(imageView);
 
         TextView title =(TextView) listItemView.findViewById(R.id.title);
         title.setText(currentSeries.getTitle());
