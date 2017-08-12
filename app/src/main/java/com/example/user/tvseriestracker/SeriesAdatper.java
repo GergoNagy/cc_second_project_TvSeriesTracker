@@ -41,16 +41,21 @@ public class SeriesAdatper extends ArrayAdapter<TvSeries> {
 //        ranking.setText(currentSeries.getPoster());
 
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.imageView);
-        Picasso.with(getContext()).load(currentSeries.getPoster()).into(imageView);
+        Picasso.with(getContext())
+                .load(currentSeries.getPoster())
+                .resize(150, 325)
+                .centerInside()
+                .error(R.drawable.noimage)
+                .into(imageView);
 
         TextView title =(TextView) listItemView.findViewById(R.id.title);
         title.setText(currentSeries.getTitle());
 
         TextView released = (TextView) listItemView.findViewById(R.id.released);
-        released.setText(currentSeries.getReleased());
+        released.setText("Released: " + currentSeries.getReleased());
 
         TextView totalSeason = (TextView) listItemView.findViewById(R.id.total_season);
-        totalSeason.setText(String.valueOf(currentSeries.getTotal()));
+        totalSeason.setText(String.valueOf("Total Season: " + currentSeries.getTotal()));
 
         listItemView.setTag(currentSeries);
 
