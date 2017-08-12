@@ -12,7 +12,7 @@ public class ListOfTvSeries {
 
     public ListOfTvSeries(){
         list = new ArrayList<TvSeries>();
-        list.add(new TvSeries("Supernatural", "13 Sep 2005", "44min", "fantasy", "info", "USA", "https://index.hu", "8.6", "Series", 12) );
+        list.add(new TvSeries("Supernatural", "13 Sep 2005", "44min", "fantasy", "info", "USA", "https://index.hu", "8.6", "Series", 12));
     }
 
     public ArrayList<TvSeries>getList(){

@@ -19,7 +19,7 @@ public class TvSeries {
 
     public TvSeries(String title, String released, String runtime, String genre,
                     String plot, String country, String poster, String imdbrating,
-                    String type, int total){
+                    String type, Integer total){
 
         this.title = title;
         this.released = released;
