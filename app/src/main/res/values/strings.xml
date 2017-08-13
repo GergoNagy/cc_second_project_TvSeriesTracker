@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TvSeriesTracker</string>
+    <string name="preference_file_key">WATCHLIST</string>
 </resources>

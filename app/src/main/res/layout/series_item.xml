@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:clipToPadding="false"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:onClick="getSeries">
 
 
     <TextView

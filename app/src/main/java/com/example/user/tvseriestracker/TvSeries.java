@@ -2,11 +2,13 @@ package com.example.user.tvseriestracker;
 
 import android.media.Image;
 
+import java.io.Serializable;
+
 /**
  * Created by user on 11/08/2017.
  */
 
-public class TvSeries {
+public class TvSeries implements Serializable{
 
     private String title;
     private String released;

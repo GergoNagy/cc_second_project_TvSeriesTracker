@@ -1,12 +1,12 @@
 package com.example.user.tvseriestracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
-
 import java.util.ArrayList;
+
 
 public class SeriesActivity extends AppCompatActivity {
 
@@ -24,20 +24,11 @@ public class SeriesActivity extends AppCompatActivity {
     }
 
     public void getSeries(View listItem){
-        TvSeries tvSeries = (TvSeries) listItem.getTag();
-        Log.d("Series title", tvSeries.getTitle());
+        TvSeries series = (TvSeries) listItem.getTag();
+
+        Intent intent = new Intent(this, WatchlistActivity.class);
+        intent.putExtra("series", series);
+
+        startActivity(intent);
     }
 }
-
-
-
-//        public void getMovie(View listItem){
-//        Movie movie = (Movie) listItem.getTag(); //hold the movie
-//        Log.d("Movie Title: ", movie.getTitle());
-//
-//        Intent intent = new Intent(this, FavouritesActivity.class); // UPDATED
-//        intent.putExtra("movie", movie); // UPDATED
-//
-//        startActivity(intent); // UPDATED
-//        }
-//        }

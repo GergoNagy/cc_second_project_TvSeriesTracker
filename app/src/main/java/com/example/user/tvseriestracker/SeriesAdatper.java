@@ -14,14 +14,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-/**
- * Created by user on 12/08/2017.
- */
 
 public class SeriesAdatper extends ArrayAdapter<TvSeries> {
 
-    public SeriesAdatper(Context context, ArrayList<TvSeries> series){
-        super(context, 0, series);
+    public SeriesAdatper(Context context, ArrayList<TvSeries> tvSeries){
+        super(context, 0, tvSeries);
 
     }
 
@@ -43,7 +40,7 @@ public class SeriesAdatper extends ArrayAdapter<TvSeries> {
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.imageView);
         Picasso.with(getContext())
                 .load(currentSeries.getPoster())
-                .resize(150, 325)
+                .resize(200, 325)
                 .centerInside()
                 .error(R.drawable.noimage)
                 .into(imageView);
