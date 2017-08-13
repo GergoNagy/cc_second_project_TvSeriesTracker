@@ -1,6 +1,5 @@
 package com.example.user.tvseriestracker;
 
-import android.media.Image;
 
 import java.io.Serializable;
 

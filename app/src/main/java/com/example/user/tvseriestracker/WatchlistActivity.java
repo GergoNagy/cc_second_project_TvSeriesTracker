@@ -27,11 +27,11 @@ public class WatchlistActivity extends AppCompatActivity {
         Gson gson = new Gson();
         TypeToken<ArrayList<TvSeries>> seriesArrayList = new TypeToken<ArrayList<TvSeries>>(){};
         ArrayList<TvSeries> myWatchlist = gson.fromJson(watchlist, seriesArrayList.getType());
-        Log.d("myfav", String.valueOf(myWatchlist));
+        Log.d("myfav", myWatchlist.toString());
 
         TvSeries newWatchlist = (TvSeries) getIntent().getSerializableExtra("series");
         myWatchlist.add(newWatchlist);
-        Log.d("myfav", String.valueOf(myWatchlist));
+        Log.d("myfav", myWatchlist.toString());
 
 
         TextView list = (TextView) findViewById(R.id.fav_list);
@@ -44,7 +44,7 @@ public class WatchlistActivity extends AppCompatActivity {
         list.setText(seriesString);
 
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("My Watchlist", gson.toJson(myWatchlist));
+        editor.putString("series", gson.toJson(myWatchlist));
         editor.apply();
 
         Toast.makeText(this, "Added to your list!", Toast.LENGTH_LONG).show();
