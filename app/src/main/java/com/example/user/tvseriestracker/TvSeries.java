@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by user on 11/08/2017.
  */
 
-public class TvSeries implements Serializable{
+public class TvSeries  implements Serializable{
 
     private String title;
     private String released;

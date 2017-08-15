@@ -36,6 +36,7 @@ public class ListOfTvSeries {
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BNzI0NzM4Mjk3MV5BMl5BanBnXkFtZTgwNTg0MDQyMTI@._V1_SX300.jpg",
                 "7.8","Series",4));
 
+
     }
 
     public ArrayList<TvSeries>getList(){
