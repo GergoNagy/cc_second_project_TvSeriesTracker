@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -54,10 +55,11 @@ public class SeriesAdatper extends ArrayAdapter<TvSeries> {
         title.setText(currentSeries.getTitle());
 
         TextView released = (TextView) listItemView.findViewById(R.id.released);
-        released.setText("Released: " + currentSeries.getReleased());
+        released.setText("Imdb rates: " + currentSeries.getImdbrating() + "/10");
 
         TextView totalSeason = (TextView) listItemView.findViewById(R.id.total_season);
         totalSeason.setText(String.valueOf("Total Season: " + currentSeries.getTotal()));
+
 
         listItemView.setTag(currentSeries);
 

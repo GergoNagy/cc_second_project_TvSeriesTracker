@@ -42,4 +42,6 @@ public class ListOfTvSeries {
     public ArrayList<TvSeries>getList(){
         return new ArrayList<TvSeries>(list);
     }
+
+
 }

@@ -44,12 +44,6 @@ public class SeriesActivity extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.main_menu, menu);
 
-//        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-//        SearchView searchView = (SearchView) menu.findItem(R.id.list_search).getActionView();
-//        searchView.setSearchableInfo(
-//                searchManager,getSearchableInfo(getComponentName());
-//        );
-
         return true;
 
     }
