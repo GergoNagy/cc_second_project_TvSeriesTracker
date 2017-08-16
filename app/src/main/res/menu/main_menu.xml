@@ -5,7 +5,9 @@
     <item
         android:id="@+id/watch_list"
         android:title="Your WatchList" />
-
+    <item
+        android:id="@+id/getShowsTime"
+        android:title="ShowTime" />
 
 
 </menu>

@@ -36,6 +36,7 @@ public class SeriesActivity extends AppCompatActivity {
 
         intent.putExtra("series", series);
         Toast.makeText(this, "Added to your list!", Toast.LENGTH_LONG).show();
+
         startActivity(intent);
     }
 
@@ -48,13 +49,16 @@ public class SeriesActivity extends AppCompatActivity {
 
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.watch_list:
                 startActivity(new Intent(this, WatchlistActivity.class));
+                return true;
+        }
+        switch (item.getItemId()){
+            case R.id.getShowsTime:
+                startActivity(new Intent(this, ShowTimeActivity.class));
                 return true;
         }
 

@@ -6,21 +6,22 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import static android.app.PendingIntent.getActivity;
 
 
 public class WatchlistActivity extends AppCompatActivity {
-
 
 
     @Override
@@ -38,15 +39,14 @@ public class WatchlistActivity extends AppCompatActivity {
         final ArrayList<TvSeries> myWatchlist = gson.fromJson(watchlist, seriesArrayList.getType());
         Log.d("myfav", myWatchlist.toString());
 
-        //new part
         final WatchListAdapter watchListAdapter = new WatchListAdapter(this, myWatchlist);
-        ListView list = (ListView) findViewById(R.id.fav_list);
+        final ListView list = (ListView) findViewById(R.id.fav_list);
 
         TvSeries newWatchlist = (TvSeries) getIntent().getSerializableExtra("series");
 
         myWatchlist.add(newWatchlist);
         myWatchlist.removeAll(Collections.singleton(null));
-        Log.d("myfav2", myWatchlist.toString());
+//        Log.d("myfav2", myWatchlist.toString());
 
 
         final SharedPreferences.Editor editor = sharedPref.edit();
@@ -54,11 +54,17 @@ public class WatchlistActivity extends AppCompatActivity {
         editor.apply();
 
         list.setAdapter(watchListAdapter);
+        //
 
-        list.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
+
+
+
+        //
+
+        list.setOnItemLongClickListener(
+                new AdapterView.OnItemLongClickListener() {
                     @Override
-                    public void onItemClick(AdapterView<?> adapter,
+                    public boolean onItemLongClick(AdapterView<?> adapter,
                                                    View item, int pos, long id) {
 
                         Log.d(this.getClass().toString(), "TRY HERE AGAIN");
@@ -67,29 +73,56 @@ public class WatchlistActivity extends AppCompatActivity {
                         editor.putString("series", gson.toJson(myWatchlist));
                         editor.apply();
 
+                        return false;
                     }
                 });
 
 
 
+    }
 
 
-        //end of new part
+
+//    public void getInfo(View view){
+//        TvSeries series = (TvSeries) view.getTag();
+//
+//
+//        Intent intent = new Intent(this, WatchlistActivity.class);
+//
+//        intent.putExtra("series", series);
+//        Toast.makeText(this, "Added to your list!", Toast.LENGTH_LONG).show();
+//        startActivity(intent);
+//
+//        Log.d("Button: ", "Clicked!");
+//
+//
+//    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.watc_list_menu, menu);
+
+        return true;
 
     }
 
-    public void getInfo(View view){
-        TvSeries series = (TvSeries) view.getTag();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.list:
+                startActivity(new Intent(this, SeriesActivity.class));
+                return true;
+        }
+        switch (item.getItemId()){
+            case R.id.getShowsTime:
+                startActivity(new Intent(this, ShowTimeActivity.class));
+                return true;
+        }
 
-        Intent intent = new Intent(this, WatchlistActivity.class);
 
-        intent.putExtra("series", series);
-        Toast.makeText(this, "Added to your list!", Toast.LENGTH_LONG).show();
-        startActivity(intent);
-
-        Log.d("Button: ", "Clicked!");
-
-
+        return super.onOptionsItemSelected(item);
     }
 
 }
