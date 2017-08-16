@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
@@ -54,12 +56,7 @@ public class WatchlistActivity extends AppCompatActivity {
         editor.apply();
 
         list.setAdapter(watchListAdapter);
-        //
 
-
-
-
-        //
 
         list.setOnItemLongClickListener(
                 new AdapterView.OnItemLongClickListener() {
@@ -77,26 +74,7 @@ public class WatchlistActivity extends AppCompatActivity {
                     }
                 });
 
-
-
     }
-
-
-
-//    public void getInfo(View view){
-//        TvSeries series = (TvSeries) view.getTag();
-//
-//
-//        Intent intent = new Intent(this, WatchlistActivity.class);
-//
-//        intent.putExtra("series", series);
-//        Toast.makeText(this, "Added to your list!", Toast.LENGTH_LONG).show();
-//        startActivity(intent);
-//
-//        Log.d("Button: ", "Clicked!");
-//
-//
-//    }
 
 
     @Override

@@ -40,6 +40,16 @@ public class SeriesActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void getInfo(View listItem){
+        TvSeries seriesInfo = (TvSeries) listItem.getTag();
+
+        Intent intent = new Intent(this, Info.class);
+
+        intent.putExtra("seriesInfo", seriesInfo);
+
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater menuInflater = getMenuInflater();
@@ -48,6 +58,8 @@ public class SeriesActivity extends AppCompatActivity {
         return true;
 
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
@@ -64,6 +76,8 @@ public class SeriesActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 }

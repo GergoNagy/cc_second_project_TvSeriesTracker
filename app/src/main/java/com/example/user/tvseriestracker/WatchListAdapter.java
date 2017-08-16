@@ -62,7 +62,7 @@ public class WatchListAdapter extends ArrayAdapter<TvSeries> {
 
         //delete button
 
-
+//
 //        Button deleteButton = (Button) listItemView.findViewById(R.id.delete_button);
 //        deleteButton.setTag(position);
 

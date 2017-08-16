@@ -23,7 +23,8 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".ShowTimeActivity"></activity>
+        <activity android:name=".ShowTimeActivity" />
+        <activity android:name=".Info"></activity>
     </application>
 
 </manifest>

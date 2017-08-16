@@ -35,7 +35,18 @@ public class ListOfTvSeries {
                 "re-populating the planet.", "USA",
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BNzI0NzM4Mjk3MV5BMl5BanBnXkFtZTgwNTg0MDQyMTI@._V1_SX300.jpg",
                 "7.8","Series",4));
-
+        list.add(new TvSeries("Firefly","20 Sep 2002","44 min","Adventure, Drama, Sci-Fi",
+                "Five hundred years in the future, a renegade crew aboard a small spacecraft tries to survive " +
+                        "as they travel the unknown parts of the galaxy and evade warring factions as well as " +
+                        "authority agents out to get them.","USA",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BNGEzYjIzZGUtNWI5YS00Y2IzLWIzMTQtMGJhNDljZDkzYzM0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
+                "9.1","series",1));
+        list.add(new TvSeries("Naruto: Shippûden","28 Oct 2009","24 min","Animation, Action, Adventure",
+                "Naruto Uzumaki, is a loud, hyperactive, adolescent ninja who constantly searches for " +
+                        "approval and recognition, as well as to become Hokage, who is acknowledged as the" +
+                        " leader and strongest of all ninja in the village.","Japan",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMzNjNjdhOGQtMmYxMi00YWFjLWFhOGUtZjc2ZTJhMDlmNmExL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+                "8.5","series",24));
 
     }
 

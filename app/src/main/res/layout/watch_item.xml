@@ -7,7 +7,9 @@
     android:layout_weight="200"
     android:clipToPadding="false"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:focusable="false"
+    >
 
 
     <TextView

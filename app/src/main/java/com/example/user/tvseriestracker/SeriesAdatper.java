@@ -1,16 +1,10 @@
 package com.example.user.tvseriestracker;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,7 +35,7 @@ public class SeriesAdatper extends ArrayAdapter<TvSeries> {
 //        TextView ranking = (TextView) listItemView.findViewById(R.id.picture);
 //        ranking.setText(currentSeries.getPoster());
 
-        ImageView imageView = (ImageView) listItemView.findViewById(R.id.imageView);
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.info_pic);
         Picasso.with(getContext())
                 .load(currentSeries.getPoster())
                 .resize(200, 325)
