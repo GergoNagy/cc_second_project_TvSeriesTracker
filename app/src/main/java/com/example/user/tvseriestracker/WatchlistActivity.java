@@ -22,6 +22,7 @@ import java.util.Collections;
 public class WatchlistActivity extends AppCompatActivity {
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,10 +62,11 @@ public class WatchlistActivity extends AppCompatActivity {
                                                    View item, int pos, long id) {
 
                         Log.d(this.getClass().toString(), "TRY HERE AGAIN");
-                       WatchListAdapter(myWatchlist.remove(pos);
+                        myWatchlist.remove(pos);
                         watchListAdapter.notifyDataSetChanged();
                         editor.putString("series", gson.toJson(myWatchlist));
                         editor.apply();
+
                     }
                 });
 
@@ -73,6 +75,19 @@ public class WatchlistActivity extends AppCompatActivity {
 
 
         //end of new part
+
+    }
+
+    public void getInfo(View view){
+        TvSeries series = (TvSeries) view.getTag();
+
+        Intent intent = new Intent(this, WatchlistActivity.class);
+
+        intent.putExtra("series", series);
+        Toast.makeText(this, "Added to your list!", Toast.LENGTH_LONG).show();
+        startActivity(intent);
+
+        Log.d("Button: ", "Clicked!");
 
 
     }
