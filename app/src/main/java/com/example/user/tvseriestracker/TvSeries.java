@@ -38,7 +38,7 @@ public class TvSeries  implements Serializable{
 
     }
 
-    public String getTitle(){
+    public  String getTitle(){
         return this.title;
     }
 

@@ -47,6 +47,10 @@ public class ListOfTvSeries {
                         " leader and strongest of all ninja in the village.","Japan",
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMzNjNjdhOGQtMmYxMi00YWFjLWFhOGUtZjc2ZTJhMDlmNmExL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
                 "8.5","series",24));
+        list.add(new TvSeries("Lost","22 Sep 2004","44 min","Adventure, Drama, Fantasy",
+                "The survivors of a plane crash are forced to work together in order to survive on a seemingly deserted tropical island.",
+                "USA","https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NzMyMzU1MV5BMl5BanBnXkFtZTcwNjc1ODUwMg@@._V1_SX300.jpg",
+                "8.4","series",6));
 
     }
 

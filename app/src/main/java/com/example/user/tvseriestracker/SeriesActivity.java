@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,13 +22,23 @@ public class SeriesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.series_list);
 
-        ListOfTvSeries tvSeries = new ListOfTvSeries();
+        final ListOfTvSeries tvSeries = new ListOfTvSeries();
         ArrayList<TvSeries> list = tvSeries.getList();
 
         SeriesAdatper seriesAdatper = new SeriesAdatper(this, list);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(seriesAdatper);
     }
+
+//    public void getInfo(View listItem){
+//        TvSeries series = (TvSeries) listItem.getTag();
+//        Intent intent = new Intent(this, Info.class);
+//
+//        intent.putExtra("series", series);
+//
+//
+//        startActivity(intent);
+//    }
 
     public void getSeries(View listItem){
         TvSeries series = (TvSeries) listItem.getTag();
@@ -40,15 +51,7 @@ public class SeriesActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void getInfo(View listItem){
-        TvSeries seriesInfo = (TvSeries) listItem.getTag();
 
-        Intent intent = new Intent(this, Info.class);
-
-        intent.putExtra("seriesInfo", seriesInfo);
-
-        startActivity(intent);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
