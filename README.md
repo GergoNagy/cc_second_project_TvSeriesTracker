@@ -1,6 +1,6 @@
 ## Tv Series Tracker
 
-Goal: Practice OO and UI design with what I learned in Java / Android 
+Goal: Practice OO and UI design what I learned in Java / Android 
 
 ### MVP
 You are required to write an Android app that allows a user to track the Tv Shows they watch. 
